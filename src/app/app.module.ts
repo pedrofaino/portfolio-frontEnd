@@ -11,6 +11,8 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { ButtonComponent } from './componentes/button/button.component';
 import { CardComponent } from './componentes/card/card.component';
 import { FooterComponent } from './footer/footer.component';
+import { ContactComponent } from './contact/contact.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { FooterComponent } from './footer/footer.component';
     BodyComponent,
     ButtonComponent,
     CardComponent,
-    FooterComponent
+    FooterComponent,
+    ContactComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
