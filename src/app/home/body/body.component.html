@@ -21,15 +21,20 @@
   </div>
 </app-card>
 <app-card [title]="'Educacion'">
-  <div *ngFor="let exp of experiencias" class="card-body">
+  <div *ngFor="let edu of educacion" class="card-body">
     <h5 class="card-title"></h5>
     <p class="card-text"></p>
   </div>
 </app-card>
-  <div class="row">
+<div class="row">
+    <h1>Hard and Soft Skills</h1>
     <circle-progress class="col" *ngFor="let tec of tecnologias"
       [percent]="85"
       [radius]="100"
+      [imageSrc]="'/assets/mysql.png'"
+      [showImage]="true"
+      [imageHeight]="50"
+      [imageWidth]="50"
       [outerStrokeWidth]="16"
       [innerStrokeWidth]="8"
       [outerStrokeColor]="'#78C000'"
@@ -37,5 +42,10 @@
       [animation]="true"
       [animationDuration]="300"
     ></circle-progress>
-  </div>
-
+</div>
+  <app-card [title]="'Proyectos'">
+    <div *ngFor="let pro of proyectos" class="card-body">
+      <h5 class="card-title"></h5>
+      <p class="card-text"></p>
+    </div>
+  </app-card>

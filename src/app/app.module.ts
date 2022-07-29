@@ -10,6 +10,7 @@ import { BodyComponent } from './home/body/body.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { ButtonComponent } from './componentes/button/button.component';
 import { CardComponent } from './componentes/card/card.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CardComponent } from './componentes/card/card.component';
     NavComponent,
     BodyComponent,
     ButtonComponent,
-    CardComponent
+    CardComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

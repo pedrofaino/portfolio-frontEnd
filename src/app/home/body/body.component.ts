@@ -10,7 +10,9 @@ import { Component, Input, OnInit } from '@angular/core';
 export class BodyComponent implements OnInit {
 
   experiencias=['asd','asd'];
-  tecnologias=['asd','asd']
+  tecnologias=['asd','asd'];
+  educacion=['asd','asd'];
+  proyectos=['asd','asd'];
 
   constructor() { }
 
