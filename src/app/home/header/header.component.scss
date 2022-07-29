@@ -1,0 +1,72 @@
+header{
+    width: 100%;
+    font-family: 'Arima', cursive; 
+}
+
+// presentation
+.container2{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 40rem;
+    margin-top: 9rem;
+}
+.h1{
+    font-size: 4rem;
+    font-family: 'Arima', cursive;
+}
+.circulo{
+    position: absolute;
+    margin: 0em 70em 35em 0em;
+    height:100px;
+    width:100px;
+    background:linear-gradient(180deg,rgba(255, 86, 86, 0.5),rgba(252, 131, 236, 0.644));
+    -moz-border-radius:50px;
+    -webkit-border-radius:50px;
+    border-radius:50px;
+ }
+ .circulo2{
+    position: absolute;
+    margin: 35em 0em 0em 70em;
+    height:100px;
+    width:100px;
+    background:linear-gradient(180deg,rgba(255, 248, 145, 0.9),rgba(145, 240, 121, 0.914));
+    -moz-border-radius:50px;
+    -webkit-border-radius:50px;
+    border-radius:50px;
+ }
+ .circulo3{
+    position: absolute;
+    margin: 35em 70em 0em 0em;
+    height:50px;
+    width:50px;
+    background:linear-gradient(180deg,rgba(152, 145, 255, 0.9),rgba(121, 240, 234, 0.914));
+    -moz-border-radius:50px;
+    -webkit-border-radius:50px;
+    border-radius:25px;
+ }
+ .circulo4{
+    position: absolute;
+    margin: 35em 0em 70em 70em;
+    height:50px;
+    width:50px;
+    background:linear-gradient(180deg,rgba(255, 83, 83, 0.9),rgba(241, 230, 165, 0.914));
+    -moz-border-radius:50px;
+    -webkit-border-radius:50px;
+    border-radius:25px;
+ }
+.active{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+@media (max-width:1400px){
+    
+}
+
+@media (max-width:900px){
+    .container2{
+        display: grid;
+    }
+}
