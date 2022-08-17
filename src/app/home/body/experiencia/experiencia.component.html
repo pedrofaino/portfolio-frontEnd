@@ -1,4 +1,9 @@
-<app-card [title]="'Experiencia Laboral'"> 
-    <h5 class="card-title"></h5>
-    <p class="card-text"></p>
-</app-card>
+<div class="card card-header">
+    <h5>Experiencia Laboral</h5>
+</div>
+<div class="card-body">
+    <form *ngFor="let Experiencia of expe">
+        <h1>{{Experiencia.nombreExp}}</h1>>
+        <textarea>{{Experiencia.descripcionExp}}</textarea>
+    </form>
+</div>
