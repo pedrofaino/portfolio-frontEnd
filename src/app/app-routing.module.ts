@@ -5,6 +5,7 @@ import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-ses
 import { ContactComponent } from './componentes/contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { NewExpComponent } from './home/body/experiencia/new-exp/new-exp.component';
+import { EditExpComponent } from './home/body/experiencia/edit-exp/edit-exp.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'/home', pathMatch:'full'},
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path: 'about', component:AboutComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'login', component:IniciarSesionComponent},
-  {path: 'new-exp', component:NewExpComponent}
+  {path: 'new-exp', component:NewExpComponent},
+  {path:'edit-exp/:id', component:EditExpComponent}
 ];
 
 @NgModule({

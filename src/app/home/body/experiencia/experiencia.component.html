@@ -10,8 +10,8 @@
                     <h5>{{Experiencia.nombreExp}}</h5>
                 </div>
                 <div>
-                    <a class="btn btn-dark margin" routerLink="/new-exp" *ngIf="isLogged"><i class="bi bi-pen"></i></a>
-                    <a class="btn btn-dark" routerLink="/new-exp" *ngIf="isLogged"><i class="bi bi-archive"></i></a>
+                    <a class="btn btn-dark margin" routerLink="/edit-exp/{{Experiencia.id}}" *ngIf="isLogged"><i class="bi bi-pen"></i></a>
+                    <a class="btn btn-dark" (click)="delete(Experiencia.id)" *ngIf="isLogged"><i class="bi bi-archive"></i></a>
                 </div>
             </div>
             <p>{{Experiencia.descripcionExp}}</p>
