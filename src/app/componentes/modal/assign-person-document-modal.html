@@ -1,0 +1,19 @@
+<div>
+    <div class="row">
+        <form (ngSubmit)="update()" novalidate #f="ngForm">
+            <div class="form-group">
+                <label for="nombreExp">{{field1name}}</label>
+                <input type="text" class="form-control" id="nombreExp" name="field1" [(ngModel)]="field1" required>
+            </div>
+            <div class="form-group">
+                <label for="descripcionExp">{{field2name}}</label>
+                <input type="text" class="form-control" id="descripcionExp" name="field2" [(ngModel)]="field2" required>
+            </div>
+            <div>
+                <button class="btn btn-dark" >
+                    Actualizar 
+                </button>
+            </div>
+        </form>    
+    </div>
+</div>

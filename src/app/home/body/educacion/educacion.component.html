@@ -1,4 +1,20 @@
-<app-card [title]="'Educacion'">
-      <h5 class="card-title"></h5>
-      <p class="card-text"></p>
-</app-card>
+<div class="card">
+      <div class="card-header div">
+            <h4>Educacion</h4>
+            <a class="btn btn-dark" routerLink="/new-edu" *ngIf="isLogged">Añadir</a>
+      </div>
+      <div class="card-body">
+            <form *ngFor="let Edu of edu" >
+                  <div class="div">
+                        <div>
+                              <h5>{{Edu.nombreEdu}}</h5>
+                        </div>
+                        <div >
+                              <a class="btn btn-dark margin" *ngIf="isLogged" (click)="modifcarEdu(Edu)"><i class="bi bi-pen" ></i></a>
+                              <a class="btn btn-dark"><i class="bi bi-archive"  *ngIf="isLogged" (click)="delete(Edu.id)"></i></a>
+                        </div>
+                  </div>
+                  <p>{{Edu.descripcionEdu}}</p>
+            </form>
+      </div>
+</div>

@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { ModalAssignPersonDocumentComponent } from './componentes/modal/assign-person-document-modal';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +23,8 @@ import { SkillsComponent } from './home/body/skills/skills.component';
 import { interceptorProvider } from './service/interceptor-service';
 import { NewExpComponent } from './home/body/experiencia/new-exp/new-exp.component';
 import { EditExpComponent } from './home/body/experiencia/edit-exp/edit-exp.component';
+import { NewEduComponent } from './home/body/educacion/new-edu/new-edu.component';
+import { EditEduComponent } from './home/body/educacion/edit-edu/edit-edu.component';
 
 @NgModule({
   declarations: [
@@ -41,10 +44,14 @@ import { EditExpComponent } from './home/body/experiencia/edit-exp/edit-exp.comp
     ProyectosComponent,
     SkillsComponent,
     NewExpComponent,
-    EditExpComponent
+    EditExpComponent,
+    NewEduComponent,
+    EditEduComponent,
+    ModalAssignPersonDocumentComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     NgCircleProgressModule.forRoot({
       radius: 100,
@@ -56,7 +63,6 @@ import { EditExpComponent } from './home/body/experiencia/edit-exp/edit-exp.comp
     }),
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
   ],
   providers: [
     interceptorProvider
