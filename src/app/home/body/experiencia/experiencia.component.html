@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-header div">
         <h4>Experiencia Laboral</h4>
-        <a class="btn btn-dark" routerLink="/new-exp" *ngIf="isLogged">Añadir</a>
+        <a class="btn btn-dark" (click)="crearExp()" *ngIf="isLogged">Añadir</a>
     </div>
     <div class="card-body">
         <form *ngFor="let Experiencia of expe">
@@ -10,8 +10,8 @@
                     <h5>{{Experiencia.nombreExp}}</h5>
                 </div>
                 <div>
-                    <a class="btn btn-dark margin" routerLink="/edit-exp/{{Experiencia.id}}" *ngIf="isLogged"><i class="bi bi-pen"></i></a>
-                    <a class="btn btn-dark" (click)="delete(Experiencia.id)" *ngIf="isLogged"><i class="bi bi-archive"></i></a>
+                    <button class="btn btn-dark margin" (click)="modificarExp(Experiencia)" *ngIf="isLogged"><i class="bi bi-pen"></i></button>
+                    <button class="btn btn-dark" (click)="delete(Experiencia.id)" *ngIf="isLogged"><i class="bi bi-archive"></i></button>
                 </div>
             </div>
             <p>{{Experiencia.descripcionExp}}</p>

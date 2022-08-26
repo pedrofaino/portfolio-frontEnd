@@ -1,17 +1,33 @@
-<div class="row">
-    <h1>Hard and Soft Skills</h1>
-    <circle-progress class="col"
-      [percent]="85"
-      [radius]="100"
-      [imageSrc]="'/assets/mysql.png'"
-      [showImage]="true"
-      [imageHeight]="50"
-      [imageWidth]="50"
-      [outerStrokeWidth]="16"
-      [innerStrokeWidth]="8"
-      [outerStrokeColor]="'#78C000'"
-      [innerStrokeColor]="'#C7E596'"
-      [animation]="true"
-      [animationDuration]="300"
-    ></circle-progress>
+<div class="card">
+    <div class="card-header x">
+      <h4>Hard and Soft Skills</h4>
+      <a class="btn btn-dark" *ngIf="isLogged" (click)="crearSkill()" >Añadir</a>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-6" *ngFor="let Skill of skill">
+          <div class="tit">
+            <h2 >{{Skill.nombreS}}</h2>
+          </div>
+            <circle-progress
+            [percent]="Skill.percent"
+            [radius]="90"
+            [imageSrc]="Skill.url_foto"
+            [showImage]="true"
+            [imageHeight]="60"
+            [imageWidth]="60"
+            [outerStrokeWidth]="16"
+            [innerStrokeWidth]="8"
+            [outerStrokeColor]="'#1B82FF'"
+            [innerStrokeColor]="'#89BEFF'"
+            [animation]="true"
+            [animationDuration]="1000"
+          ></circle-progress>
+          <div class="button">
+            <button class="btn btn-dark margin" *ngIf="isLogged" (click)="modificarSkill(Skill)"><i class="bi bi-pen" ></i></button>      
+            <button class="btn btn-dark" *ngIf="isLogged" (click)="delete(Skill)"><i class="bi bi-archive"></i></button>    
+          </div>
+        </div>
+      </div>
+    </div>
 </div>

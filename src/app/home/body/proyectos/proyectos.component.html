@@ -1,4 +1,20 @@
-<app-card [title]="'Proyectos'">
-    <h5 class="card-title"></h5>
-    <p class="card-text"></p>
-</app-card>
+<div class="card">
+    <div class="card-header div">
+          <h4>Proyectos</h4>
+          <a class="btn btn-dark" (click)="crearPro()" *ngIf="isLogged">Añadir</a>
+    </div>
+    <div class="card-body">
+          <form *ngFor="let Pro of pro" >
+                <div class="div">
+                      <div>
+                            <h5>{{Pro.nombreP}}</h5>
+                      </div>
+                      <div >
+                            <button class="btn btn-dark margin" *ngIf="isLogged" (click)="modificarPro(Pro)"><i class="bi bi-pen" ></i></button>
+                            <button class="btn btn-dark" *ngIf="isLogged"><i class="bi bi-archive"   (click)="delete(Pro)"></i></button>
+                      </div>
+                </div>
+                <p>{{Pro.descripcionP}}</p>
+          </form>
+    </div>
+</div>

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { ModalAssignPersonDocumentComponent } from './componentes/modal/assign-person-document-modal';
+import { HttpModule } from '@angular/http';
+import { ModalAssignPersonDocumentComponent } from './componentes/modals/modal/assign-person-document-modal';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,10 +22,8 @@ import { EducacionComponent } from './home/body/educacion/educacion.component';
 import { ProyectosComponent } from './home/body/proyectos/proyectos.component';
 import { SkillsComponent } from './home/body/skills/skills.component';
 import { interceptorProvider } from './service/interceptor-service';
-import { NewExpComponent } from './home/body/experiencia/new-exp/new-exp.component';
-import { EditExpComponent } from './home/body/experiencia/edit-exp/edit-exp.component';
-import { NewEduComponent } from './home/body/educacion/new-edu/new-edu.component';
-import { EditEduComponent } from './home/body/educacion/edit-edu/edit-edu.component';
+import { UploadFileModalComponent } from './componentes/modals/upload-file-modal/upload-file-modal.component';
+
 
 @NgModule({
   declarations: [
@@ -43,16 +42,14 @@ import { EditEduComponent } from './home/body/educacion/edit-edu/edit-edu.compon
     EducacionComponent,
     ProyectosComponent,
     SkillsComponent,
-    NewExpComponent,
-    EditExpComponent,
-    NewEduComponent,
-    EditEduComponent,
-    ModalAssignPersonDocumentComponent
+    ModalAssignPersonDocumentComponent,
+    UploadFileModalComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    HttpModule,
     NgCircleProgressModule.forRoot({
       radius: 100,
       outerStrokeWidth: 16,

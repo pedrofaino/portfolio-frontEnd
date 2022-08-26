@@ -1,12 +1,37 @@
-.img{
-    width: 50%;
-    height: 50%;
-}
-.row{
-    margin-top: 0rem;
-    padding: 5rem;
-}
 .card{
     margin: 2rem;
-
+}
+.row{
+    margin-right: 1rem;
+}
+.x{
+    display: flex;
+    justify-content: space-between;
+}
+.col-sm-6 {
+    width:20%;
+}
+.margin{
+    margin:0.5rem;
+}
+@media (min-width: 300px) and (max-width: 1200px) {  
+    .row{
+        display: flex;
+    }
+    .col-sm-6{
+        width: 100vw;
+        display: flex;
+        justify-content: space-between;
+    }
+    .button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .tit{
+        display: flex;
+        width: 100px;
+        justify-content: center;
+        align-items: center;
+    }
 }
