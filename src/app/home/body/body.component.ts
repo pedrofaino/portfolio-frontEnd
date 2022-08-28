@@ -85,13 +85,12 @@ export class BodyComponent implements OnInit {
   updateBody(){
     this.bodyServ.update(this.toEditBody.id, this.toEditBody).subscribe(
       data=>{
-        this.router.navigate(['']);
+        this.cargarBody();
         this.toEditBody = {sobreMi : "", url_foto : "",url_Foto:""}
       }, err=>{
-        alert("Error al modificar body");
-        this.router.navigate(['']);
-      }
-    )
+        alert("error al modificar el body, error:" + console.log(err));
+      });
+      
   }
 
   modificarBody(bodyToUpdate: Body){
