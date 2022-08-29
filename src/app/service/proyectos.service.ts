@@ -8,7 +8,7 @@ import { Pro } from '../model/pro';
 })
 export class ProyectosService {
 
-  Url= "http://localhost:8080/pro/"
+  Url= "https://portfoliopf.herokuapp.com/pro/"
 
   constructor(private httpClient:HttpClient) { }
   public lista():Observable<Pro[]>{

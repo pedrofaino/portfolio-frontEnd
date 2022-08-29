@@ -37,11 +37,9 @@ export class ExperienciaComponent implements OnInit {
   createExp(){
     this.expServ.save(this.toNewExp).subscribe(
       data=>{
-        this.router.navigate(['']);
         this.cargarExperiencia();
       },err=>{
-        alert('fallo');
-        this.router.navigate(['']);
+        alert('fallo'+ err);
       }
     )
   }

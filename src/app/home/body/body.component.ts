@@ -4,7 +4,6 @@ import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { BodyService } from 'src/app/service/body.service';
 import { TokenService } from 'src/app/service/token.service';
 import { Body } from 'src/app/model/body';
-import { ModalAssignPersonDocumentComponent } from 'src/app/componentes/modals/modal/assign-person-document-modal';
 import { UploadFileModalComponent } from 'src/app/componentes/modals/upload-file-modal/upload-file-modal.component';
 
 @Component({

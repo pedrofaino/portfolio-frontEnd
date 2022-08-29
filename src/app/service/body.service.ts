@@ -8,7 +8,7 @@ import { Body } from '../model/body';
 })
 export class BodyService {
 
-  Url = "http://localhost:8080/body/"
+  Url = "https://portfoliopf.herokuapp.com/body/"
 
   constructor(private httpClient: HttpClient) { }
 

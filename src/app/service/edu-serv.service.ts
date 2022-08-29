@@ -8,7 +8,7 @@ import { Edu } from '../model/edu';
 })
 export class EduServService {
 
-  Url= "http://localhost:8080/edu/"
+  Url= "https://portfoliopf.herokuapp.com/edu/"
 
   constructor(private httpClient: HttpClient) { }
 
