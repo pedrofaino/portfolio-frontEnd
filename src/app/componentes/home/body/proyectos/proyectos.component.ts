@@ -1,28 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { ModalAssignPersonDocumentComponent } from 'src/app/componentes/modals/modal/assign-person-document-modal';
-import { Experiencia } from 'src/app/model/experiencia';
-import { ExperienciaServService } from 'src/app/service/experiencia-serv.service';
+import { Pro } from 'src/app/model/pro';
+import { ProyectosService } from 'src/app/service/proyectos.service';
 import { TokenService } from 'src/app/service/token.service';
 
 @Component({
-  selector: 'app-experiencia',
-  templateUrl: './experiencia.component.html',
-  styleUrls: ['./experiencia.component.scss']
+  selector: 'app-proyectos',
+  templateUrl: './proyectos.component.html',
+  styleUrls: ['./proyectos.component.scss']
 })
-export class ExperienciaComponent implements OnInit {
+export class ProyectosComponent implements OnInit {
 
-  expe:Experiencia[]=[];
-  toEditExp:Experiencia;
-  toNewExp:Experiencia = {nombreExp: "", descripcionExp: ""};
+  pro:Pro[]=[];
+  toEditPro:Pro;
+  toNewPro:Pro={nombreP:"",descripcionP:""}
+  
 
-  constructor(private expServ:ExperienciaServService,private modalService:NgbModal, private tokenService: TokenService, private router: Router) { }
+
+  constructor(private proServ:ProyectosService, private tokenService:TokenService, private modalService:NgbModal, private activatedRoute:ActivatedRoute, private router:Router) { }
 
   isLogged=false;
 
+
   ngOnInit(): void {
-    this.cargarExperiencia();
+    this.cargarProyecto();
     if(this.tokenService.getToken()){
       this.isLogged=true;
     }else{
@@ -30,21 +33,23 @@ export class ExperienciaComponent implements OnInit {
     }
   }
 
-  cargarExperiencia():void{
-    this.expServ.lista().subscribe(data=>{this.expe=data});
+  cargarProyecto():void{
+    this.proServ.lista().subscribe(data=>{this.pro=data});
   }
 
-  createExp(){
-    this.expServ.save(this.toNewExp).subscribe(
+  createPro(){
+    this.proServ.save(this.toNewPro).subscribe(
       data=>{
-        this.cargarExperiencia();
-      },err=>{
-        alert('fallo'+ err);
+        this.cargarProyecto();
+        this.toNewPro = {nombreP: "", descripcionP: ""}
+      }, err=>{
+        console.log(err);
+        alert('fallo' + err);
       }
-    )
+    );
   }
 
-  crearExp(){
+  crearPro(){
     const options: NgbModalOptions = {
       windowClass: 'document-preview-modal',
       centered: true,
@@ -55,21 +60,21 @@ export class ExperienciaComponent implements OnInit {
     modal.componentInstance.field1name = "Nombre";
     modal.componentInstance.field2name = "Descripcion";
     modal.componentInstance.butttonText = "Crear";
-    modal.componentInstance.field1 = this.toNewExp.nombreExp;
-    modal.componentInstance.field2 = this.toNewExp.descripcionExp;
-    modal.componentInstance.buttonFunction = this.createExp.bind(this);
+    modal.componentInstance.field1 = this.toNewPro.nombreP;
+    modal.componentInstance.field2 = this.toNewPro.descripcionP;
+    modal.componentInstance.buttonFunction = this.createPro.bind(this);
     modal.componentInstance.field1Change.subscribe((receivedEntry: any) => {
-      this.toNewExp.nombreExp = receivedEntry;
+      this.toNewPro.nombreP = receivedEntry;
     });
     modal.componentInstance.field2Change.subscribe((receivedEntry: any) => {
-      this.toNewExp.descripcionExp = receivedEntry;
+      this.toNewPro.descripcionP = receivedEntry;
     });
     return modal;
   }
 
 
-  updateE(){
-    this.expServ.update(this.toEditExp.id, this.toEditExp).subscribe(
+  updatePro(){
+    this.proServ.update(this.toEditPro.id, this.toEditPro).subscribe(
       data =>{
         this.router.navigate(['']);
       },err =>{
@@ -79,8 +84,8 @@ export class ExperienciaComponent implements OnInit {
     )
   }
 
-  modificarExp(expToUpdate: Experiencia){
-    this.toEditExp = expToUpdate;
+  modificarPro(proToUpdate: Pro){
+    this.toEditPro = proToUpdate;
     const options: NgbModalOptions = {
       windowClass: 'document-preview-modal',
       centered: true,
@@ -91,27 +96,33 @@ export class ExperienciaComponent implements OnInit {
     modal.componentInstance.field1name = "Nombre";
     modal.componentInstance.field2name = "Descripcion";
     modal.componentInstance.butttonText = "Actualizar";
-    modal.componentInstance.field1 = this.toEditExp.nombreExp
-    modal.componentInstance.field2 = this.toEditExp.descripcionExp
-    modal.componentInstance.buttonFunction = this.updateE.bind(this);
+    modal.componentInstance.field1 = this.toEditPro.nombreP
+    modal.componentInstance.field2 = this.toEditPro.descripcionP
+    modal.componentInstance.buttonFunction = this.updatePro.bind(this);
     modal.componentInstance.field1Change.subscribe((receivedEntry: any) => {
-      this.toEditExp.nombreExp = receivedEntry;
+      this.toEditPro.nombreP = receivedEntry;
     });
     modal.componentInstance.field2Change.subscribe((receivedEntry: any) => {
-      this.toEditExp.descripcionExp = receivedEntry;
+      this.toEditPro.descripcionP = receivedEntry;
     });
     return modal;
   }
 
-  delete(id?: number){
+
+  delete(pro: Pro){
+    const id = pro.id;
+    console.log('que onda', id);
     if(id!=undefined){
-      this.expServ.delete(id).subscribe(
+      this.proServ.delete(id).subscribe(
         data=>{
-          this.cargarExperiencia();
+          this.cargarProyecto();
         },err=>{
           alert("No se pudo eliminar LA EXP");
         }
       )
     }
   }
+
+
+
 }

@@ -7,30 +7,29 @@ import { Experiencia } from '../model/experiencia';
   providedIn: 'root'
 })
 export class ExperienciaServService {
-  expUrl = "https://portfoliopf-cfe74.web.app/explab/"
+  Url = "https://portfoliopf.herokuapp.com/explab/"
 
   constructor(private httpClient: HttpClient) { 
   }
 
   public lista():Observable<Experiencia[]>{
-    return this.httpClient.get<Experiencia[]>(this.expUrl + 'lista');
-
+    return this.httpClient.get<Experiencia[]>(this.Url+'lista');
   } 
 
   public detail(id:number):Observable<Experiencia>{
-    return this.httpClient.get<Experiencia>(this.expUrl+`detail/${id}`);
+    return this.httpClient.get<Experiencia>(this.Url+`detail/${id}`);
   }
 
   public save(experiencia:Experiencia):Observable<any>{
-    return this.httpClient.post<any>(this.expUrl + 'create',experiencia);
+    return this.httpClient.post<any>(this.Url + 'create',experiencia);
   }
 
   public update(id:number, experiencia:Experiencia):Observable<any>{
-    return this.httpClient.put<any>(this.expUrl+ `update/${id}`,experiencia);
+    return this.httpClient.put<any>(this.Url+ `update/${id}`,experiencia);
   }
 
   public delete(id:number):Observable<any>{
-    return this.httpClient.delete<any>(this.expUrl+`delete/${id}`)
+    return this.httpClient.delete<any>(this.Url+`delete/${id}`)
   }
 
 }

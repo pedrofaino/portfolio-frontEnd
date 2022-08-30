@@ -1,18 +1,16 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { BodyService } from 'src/app/service/body.service';
 import { TokenService } from 'src/app/service/token.service';
+import { UploadFileModalComponent } from '../../modals/upload-file-modal/upload-file-modal.component';
 import { Body } from 'src/app/model/body';
-import { UploadFileModalComponent } from 'src/app/componentes/modals/upload-file-modal/upload-file-modal.component';
 
 @Component({
   selector: 'app-body',
   templateUrl: './body.component.html',
   styleUrls: ['./body.component.scss']
 })
-  
-
 export class BodyComponent implements OnInit {
 
   body:Body[]=[];
@@ -115,6 +113,7 @@ export class BodyComponent implements OnInit {
     });
     return modal;
   }
+
 
 
 

@@ -4,10 +4,7 @@ import { ModalAssignPersonDocumentComponent } from './componentes/modals/modal/a
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './home/header/header.component';
-import { HomeComponent } from './home/home.component';
 import { NavComponent } from './componentes/nav/nav.component';
-import { BodyComponent } from './home/body/body.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { ButtonComponent } from './componentes/button/button.component';
 import { CardComponent } from './componentes/card/card.component';
@@ -17,12 +14,15 @@ import { AboutComponent } from './componentes/about/about.component';
 import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-sesion.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ExperienciaComponent } from './home/body/experiencia/experiencia.component';
-import { EducacionComponent } from './home/body/educacion/educacion.component';
-import { ProyectosComponent } from './home/body/proyectos/proyectos.component';
-import { SkillsComponent } from './home/body/skills/skills.component';
 import { interceptorProvider } from './service/interceptor-service';
 import { UploadFileModalComponent } from './componentes/modals/upload-file-modal/upload-file-modal.component';
+import { HeaderComponent } from './componentes/home/header/header.component';
+import { HomeComponent } from './componentes/home/home.component';
+import { BodyComponent } from './componentes/home/body/body.component';
+import { ExperienciaComponent } from './componentes/home/body/experiencia/experiencia.component';
+import { EducacionComponent } from './componentes/home/body/educacion/educacion.component';
+import { ProyectosComponent } from './componentes/home/body/proyectos/proyectos.component';
+import { SkillsComponent } from './componentes/home/body/skills/skills.component';
 
 
 @NgModule({
