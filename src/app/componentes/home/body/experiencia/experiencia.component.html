@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-header div">
         <h4>Experiencia Laboral</h4>
-        <a class="btn btn-dark" (click)="crearExp()" *ngIf="isLogged">Añadir</a>
+        <app-button-add  (click)="crearExp()" *ngIf="isLogged" label="Añadir"></app-button-add>
     </div>
     <div class="card-body">
         <form *ngFor="let Experiencia of expe">
@@ -10,8 +10,8 @@
                     <h5>{{Experiencia.nombreExp}}</h5>
                 </div>
                 <div>
-                    <button class="btn btn-dark margin" (click)="modificarExp(Experiencia)" *ngIf="isLogged"><i class="bi bi-pen"></i></button>
-                    <button class="btn btn-dark" (click)="delete(Experiencia.id)" *ngIf="isLogged"><i class="bi bi-archive"></i></button>
+                    <app-button-edit (click)="modificarExp(Experiencia)" *ngIf="isLogged"></app-button-edit>
+                    <app-button-delete (click)="delete(Experiencia.id)" *ngIf="isLogged"></app-button-delete>
                 </div>
             </div>
             <p>{{Experiencia.descripcionExp}}</p>

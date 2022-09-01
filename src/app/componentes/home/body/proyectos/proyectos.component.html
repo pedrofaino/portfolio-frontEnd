@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-header div">
           <h4>Proyectos</h4>
-          <a class="btn btn-dark" (click)="crearPro()" *ngIf="isLogged">Añadir</a>
+          <app-button-add (click)="crearPro()" *ngIf="isLogged" label="Añadir"></app-button-add>
     </div>
     <div class="card-body">
           <form *ngFor="let Pro of pro" >
@@ -10,8 +10,8 @@
                             <h5>{{Pro.nombreP}}</h5>
                       </div>
                       <div >
-                            <button class="btn btn-dark margin" *ngIf="isLogged" (click)="modificarPro(Pro)"><i class="bi bi-pen" ></i></button>
-                            <button class="btn btn-dark" *ngIf="isLogged"><i class="bi bi-archive"   (click)="delete(Pro)"></i></button>
+                            <app-button-edit *ngIf="isLogged" (click)="modificarPro(Pro)"></app-button-edit>
+                            <app-button-delete *ngIf="isLogged"(click)="delete(Pro)"></app-button-delete>
                       </div>
                 </div>
                 <p>{{Pro.descripcionP}}</p>

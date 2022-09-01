@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-header x">
       <h4>Hard and Soft Skills</h4>
-      <a class="btn btn-dark" *ngIf="isLogged" (click)="crearSkill()" >Añadir</a>
+      <app-button-add *ngIf="isLogged" (click)="crearSkill()" label="Añadir"></app-button-add>
     </div>
     <div class="card-body">
       <div class="row">
@@ -24,8 +24,8 @@
             [animationDuration]="1000"
           ></circle-progress>
           <div class="button">
-            <button class="btn btn-dark margin" *ngIf="isLogged" (click)="modificarSkill(Skill)"><i class="bi bi-pen" ></i></button>      
-            <button class="btn btn-dark" *ngIf="isLogged" (click)="delete(Skill)"><i class="bi bi-archive"></i></button>    
+            <app-button-edit *ngIf="isLogged" (click)="modificarSkill(Skill)"></app-button-edit>      
+            <app-button-delete *ngIf="isLogged" (click)="delete(Skill)"></app-button-delete>    
           </div>
         </div>
       </div>

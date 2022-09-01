@@ -23,6 +23,9 @@ import { ExperienciaComponent } from './componentes/home/body/experiencia/experi
 import { EducacionComponent } from './componentes/home/body/educacion/educacion.component';
 import { ProyectosComponent } from './componentes/home/body/proyectos/proyectos.component';
 import { SkillsComponent } from './componentes/home/body/skills/skills.component';
+import { ButtonEditComponent } from './componentes/button-edit/button-edit.component';
+import { ButtonDeleteComponent } from './componentes/button-delete/button-delete.component';
+import { ButtonAddComponent } from './componentes/button-add/button-add.component';
 
 
 @NgModule({
@@ -43,7 +46,10 @@ import { SkillsComponent } from './componentes/home/body/skills/skills.component
     ProyectosComponent,
     SkillsComponent,
     ModalAssignPersonDocumentComponent,
-    UploadFileModalComponent
+    UploadFileModalComponent,
+    ButtonEditComponent,
+    ButtonDeleteComponent,
+    ButtonAddComponent
   ],
   imports: [
     BrowserModule,

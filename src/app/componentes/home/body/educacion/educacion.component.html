@@ -1,20 +1,20 @@
 <div class="card">
-    <div class="card-header div">
-          <h4>Educacion</h4>
-          <a class="btn btn-dark" (click)="crearEdu()" *ngIf="isLogged">Añadir</a>
-    </div>
-    <div class="card-body">
-          <form *ngFor="let Edu of edu" >
-                <div class="div">
-                      <div>
-                            <h5>{{Edu.nombreEdu}}</h5>
-                      </div>
-                      <div >
-                            <button class="btn btn-dark margin" *ngIf="isLogged" (click)="modifcarEdu(Edu)"><i  class="bi bi-pen" ></i></button>
-                            <button class="btn btn-dark" *ngIf="isLogged" ><i class="bi bi-archive"  (click)="delete(Edu.id)"></i></button>
-                      </div>
-                </div>
-                <p>{{Edu.descripcionEdu}}</p>
-          </form>
-    </div>
+      <div class="card-header div">
+            <h4>Educacion</h4>
+            <app-button-add (click)="crearEdu()" *ngIf="isLogged" label="Añadir"></app-button-add>
+      </div>
+      <div class="card-body">
+            <form *ngFor="let Edu of edu" >
+                  <div class="div">
+                        <div>
+                              <h5>{{Edu.nombreEdu}}</h5>
+                        </div>
+                        <div >
+                              <app-button-edit *ngIf="isLogged" (click)="modifcarEdu(Edu)"></app-button-edit>
+                              <app-button-delete *ngIf="isLogged" ><i class="bi bi-archive"></i></app-button-delete>
+                        </div>
+                  </div>
+                  <p>{{Edu.descripcionEdu}}</p>
+            </form>
+      </div>
 </div>
