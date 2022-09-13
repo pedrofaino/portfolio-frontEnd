@@ -15,18 +15,17 @@ export class EducacionComponent implements OnInit {
   edu:Edu[]=[];
   toEditEdu:Edu;
   toNewEdu:Edu = {nombreEdu: "", descripcionEdu: ""};
+  isLogged=false;
+
 
   constructor(private eduServ:EduServService, private tokenService:TokenService, private modalService: NgbModal, private activatedRouter: ActivatedRoute, private router:Router) { }
 
-  isLogged=false;
 
   ngOnInit(): void {
     this.cargarEducacion();
-    if(this.tokenService.getToken()){
-      this.isLogged=true;
-    }else{
-      this.isLogged=false;
-    }
+    this.tokenService.isLogged.subscribe((isLogged) => {
+      this.isLogged = isLogged;
+    })
   }
   
   cargarEducacion():void{

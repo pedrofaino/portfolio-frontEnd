@@ -1,0 +1,8 @@
+{
+    "localhost" : {
+        "TargetApiUrl" : "http://localhost:8080/"
+    },
+    "otro_host" : {
+        "TargetApiUrl" : "https://portfoliopf.herokuapp.com/"
+    }
+}

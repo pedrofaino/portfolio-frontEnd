@@ -28,11 +28,9 @@ export class SkillsComponent implements OnInit {
 
   ngOnInit(): void {
     this.cargarSkill();
-    if(this.tokenService.getToken()){
-      this.isLogged=true;
-    }else{
-      this.isLogged=false;
-    }
+    this.tokenService.isLogged.subscribe((isLogged) => {
+      this.isLogged = isLogged;
+    })
   }
   cargarSkill():void{
     this.skillServ.lista().subscribe(data=>{this.skill=data});

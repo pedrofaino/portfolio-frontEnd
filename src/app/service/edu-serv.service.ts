@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Edu } from '../model/edu';
 
 @Injectable({
@@ -8,8 +9,8 @@ import { Edu } from '../model/edu';
 })
 export class EduServService {
 
-  Url= "https://portfoliopf.herokuapp.com/edu/"
-
+  private Url = environment.apiBaseUrl
+  
   constructor(private httpClient: HttpClient) { }
 
   public lista():Observable<Edu[]>{

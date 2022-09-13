@@ -1,15 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Body } from '../model/body';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BodyService {
-
-  Url = "https://portfoliopf.herokuapp.com/body/"
-
+  
+  private Url = environment.apiBaseUrl
+  
   constructor(private httpClient: HttpClient) { }
 
   public lista():Observable<Body[]>{
@@ -27,6 +28,5 @@ export class BodyService {
   public update(id:number, body:Body):Observable<Body>{
     return this.httpClient.put<any>(this.Url+`update/${id}`,body);
   }
-
 
 }

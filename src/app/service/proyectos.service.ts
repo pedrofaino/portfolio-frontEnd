@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Pro } from '../model/pro';
 
 @Injectable({
@@ -8,7 +9,7 @@ import { Pro } from '../model/pro';
 })
 export class ProyectosService {
 
-  Url= "https://portfoliopf.herokuapp.com/pro/"
+  private Url = environment.apiBaseUrl+"pro/";
 
   constructor(private httpClient:HttpClient) { }
   public lista():Observable<Pro[]>{

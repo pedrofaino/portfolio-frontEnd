@@ -17,24 +17,24 @@ export class BodyComponent implements OnInit {
   toEditBody:Body;
   toNewBody: Body = {sobreMi:"", url_foto:"", url_Foto:""};
   fileToUpload: File = null;
+  isLogged=false;
 
   constructor(private bodyServ:BodyService, 
     private modalService:NgbModal, 
     private tokenService:TokenService, 
     private router:Router, 
     private activatedRouter:ActivatedRoute
-    ) { }
+    ) { 
+    }
 
-  isLogged=false;
+ 
 
 
   ngOnInit(): void {
     this.cargarBody();
-    if(this.tokenService.getToken()){
-      this.isLogged=true;
-    }else{
-      this.isLogged=false;
-    }
+    this.tokenService.isLogged.subscribe((isLogged) => {
+      this.isLogged = isLogged;
+    })
   }
 
   cargarBody():void{
