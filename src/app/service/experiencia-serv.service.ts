@@ -9,7 +9,7 @@ import { Experiencia } from '../model/experiencia';
 })
 export class ExperienciaServService {
 
-  private Url = environment.apiBaseUrl
+  private Url = environment.apiBaseUrl+"explab/"
   
   constructor(private httpClient: HttpClient) { 
   }

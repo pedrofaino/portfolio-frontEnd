@@ -9,7 +9,7 @@ import { Edu } from '../model/edu';
 })
 export class EduServService {
 
-  private Url = environment.apiBaseUrl
+  private Url = environment.apiBaseUrl+"edu/"
   
   constructor(private httpClient: HttpClient) { }
 

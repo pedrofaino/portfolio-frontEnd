@@ -9,7 +9,7 @@ import { Body } from '../model/body';
 })
 export class BodyService {
   
-  private Url = environment.apiBaseUrl
+  private Url = environment.apiBaseUrl+"body/"
   
   constructor(private httpClient: HttpClient) { }
 
