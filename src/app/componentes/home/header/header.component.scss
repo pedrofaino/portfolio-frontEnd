@@ -15,7 +15,16 @@ header{
 .h1{
     font-size: 4rem;
     font-family: 'Arima', cursive;
+    transition: 2s;
 }
+
+
+.h2{
+    font-size: 4rem;
+    font-family: 'Arima', cursive;
+    transition: 2s;
+}
+
 .circulo{
     position: absolute;
     margin: 0em 70em 35em 0em;
@@ -25,6 +34,8 @@ header{
     -moz-border-radius:50px;
     -webkit-border-radius:50px;
     border-radius:50px;
+    transition: 2s;
+
  }
  .circulo2{
     position: absolute;
@@ -35,6 +46,8 @@ header{
     -moz-border-radius:50px;
     -webkit-border-radius:50px;
     border-radius:50px;
+    transition: 2s;
+
  }
  .circulo3{
     position: absolute;
@@ -45,6 +58,8 @@ header{
     -moz-border-radius:50px;
     -webkit-border-radius:50px;
     border-radius:25px;
+    transition: 2s;
+
  }
  .circulo4{
     position: absolute;
@@ -55,7 +70,28 @@ header{
     -moz-border-radius:50px;
     -webkit-border-radius:50px;
     border-radius:25px;
+    transition: 2s;
  }
+
+ .circulo:hover{
+    height: 150px;
+    width: 150px;
+ }
+ .circulo2:hover{
+    height: 150px;
+    width: 150px;
+ }
+ .circulo3:hover{
+    height: 100px;
+    width: 100px;
+ }
+ .circulo4:hover{
+    height: 100px;
+    width: 100px;
+ }
+
+
+
 .active{
     font-size: 25px;
     font-weight: bold;
