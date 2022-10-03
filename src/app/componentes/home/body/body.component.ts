@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
@@ -26,9 +27,6 @@ export class BodyComponent implements OnInit {
     private activatedRouter:ActivatedRoute
     ) { 
     }
-
- 
-
 
   ngOnInit(): void {
     this.cargarBody();
@@ -113,8 +111,4 @@ export class BodyComponent implements OnInit {
     });
     return modal;
   }
-
-
-
-
 }
