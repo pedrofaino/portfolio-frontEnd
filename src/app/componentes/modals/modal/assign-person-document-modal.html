@@ -13,6 +13,10 @@
                 <label for="descripcionExp">{{field3name}}</label>
                 <input type="text" class="form-control" id="Exp" name="field3" [(ngModel)]="field3" required>
             </div>
+            <div class="form-group" *ngIf="field4 !== null && field4name">
+                <label for="descripcionExp">{{field4name}}</label>
+                <input type="text" class="form-control" id="Exp" name="field4" [(ngModel)]="field4" required>
+            </div>
             <div>
                 <button class="btn btn-dark" >
                     {{butttonText}} 

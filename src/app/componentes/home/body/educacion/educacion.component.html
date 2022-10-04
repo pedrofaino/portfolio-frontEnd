@@ -11,10 +11,14 @@
                         </div>
                         <div >
                               <app-button-edit *ngIf="isLogged" (click)="modifcarEdu(Edu)"></app-button-edit>
-                              <app-button-delete *ngIf="isLogged" ><i class="bi bi-archive"></i></app-button-delete>
+                              <app-button-delete *ngIf="isLogged" (click)="delete(Edu.id)" ><i class="bi bi-archive"></i></app-button-delete>
                         </div>
                   </div>
-                  <p>{{Edu.descripcionEdu}}</p>
+                  <div>
+                        <img src="{{Edu.url_foto}}"/>
+                        <p>{{Edu.fecha}}</p>
+                        <p>{{Edu.descripcionEdu}}</p>
+                  </div>
             </form>
       </div>
 </div>

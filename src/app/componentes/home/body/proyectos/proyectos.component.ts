@@ -15,7 +15,7 @@ export class ProyectosComponent implements OnInit {
 
   pro:Pro[]=[];
   toEditPro:Pro;
-  toNewPro:Pro={nombreP:"",descripcionP:""}
+  toNewPro:Pro={nombreP:"", fecha:"", link:"", descripcionP:""}
   
 
 
@@ -39,7 +39,7 @@ export class ProyectosComponent implements OnInit {
     this.proServ.save(this.toNewPro).subscribe(
       data=>{
         this.cargarProyecto();
-        this.toNewPro = {nombreP: "", descripcionP: ""}
+        this.toNewPro = {nombreP: "", fecha:"", link:"", descripcionP: ""}
       }, err=>{
         console.log(err);
         alert('fallo' + err);
@@ -56,13 +56,23 @@ export class ProyectosComponent implements OnInit {
     
     const modal = this.modalService.open(ModalAssignPersonDocumentComponent, options);
     modal.componentInstance.field1name = "Nombre";
-    modal.componentInstance.field2name = "Descripcion";
+    modal.componentInstance.field2name = "Fecha";
+    modal.componentInstance.field3name = "Link";
+    modal.componentInstance.field4name = "Descripcion";
     modal.componentInstance.butttonText = "Crear";
     modal.componentInstance.field1 = this.toNewPro.nombreP;
-    modal.componentInstance.field2 = this.toNewPro.descripcionP;
+    modal.componentInstance.field2 = this.toNewPro.nombreP;
+    modal.componentInstance.field3 = this.toNewPro.nombreP;
+    modal.componentInstance.field4 = this.toNewPro.descripcionP;
     modal.componentInstance.buttonFunction = this.createPro.bind(this);
     modal.componentInstance.field1Change.subscribe((receivedEntry: any) => {
       this.toNewPro.nombreP = receivedEntry;
+    });
+    modal.componentInstance.field1Change.subscribe((receivedEntry: any) => {
+      this.toNewPro.fecha = receivedEntry;
+    });
+    modal.componentInstance.field1Change.subscribe((receivedEntry: any) => {
+      this.toNewPro.link = receivedEntry;
     });
     modal.componentInstance.field2Change.subscribe((receivedEntry: any) => {
       this.toNewPro.descripcionP = receivedEntry;
@@ -92,13 +102,23 @@ export class ProyectosComponent implements OnInit {
     
     const modal = this.modalService.open(ModalAssignPersonDocumentComponent, options);
     modal.componentInstance.field1name = "Nombre";
-    modal.componentInstance.field2name = "Descripcion";
+    modal.componentInstance.field2name = "Fecha";
+    modal.componentInstance.field3name = "Link";
+    modal.componentInstance.field4name = "Descripcion";
     modal.componentInstance.butttonText = "Actualizar";
     modal.componentInstance.field1 = this.toEditPro.nombreP
-    modal.componentInstance.field2 = this.toEditPro.descripcionP
+    modal.componentInstance.field2 = this.toEditPro.fecha
+    modal.componentInstance.field3 = this.toEditPro.link
+    modal.componentInstance.field4 = this.toEditPro.descripcionP
     modal.componentInstance.buttonFunction = this.updatePro.bind(this);
     modal.componentInstance.field1Change.subscribe((receivedEntry: any) => {
       this.toEditPro.nombreP = receivedEntry;
+    });
+    modal.componentInstance.field1Change.subscribe((receivedEntry: any) => {
+      this.toEditPro.fecha = receivedEntry;
+    });
+    modal.componentInstance.field1Change.subscribe((receivedEntry: any) => {
+      this.toEditPro.link = receivedEntry;
     });
     modal.componentInstance.field2Change.subscribe((receivedEntry: any) => {
       this.toEditPro.descripcionP = receivedEntry;

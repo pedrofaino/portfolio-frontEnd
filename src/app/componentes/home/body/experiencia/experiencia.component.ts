@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { ModalAssignPersonDocumentComponent } from 'src/app/componentes/modals/modal/assign-person-document-modal';
+import { UploadFileModalComponent } from 'src/app/componentes/modals/upload-file-modal/upload-file-modal.component';
 import { Experiencia } from 'src/app/model/experiencia';
 import { ExperienciaServService } from 'src/app/service/experiencia-serv.service';
 import { TokenService } from 'src/app/service/token.service';
@@ -15,7 +16,7 @@ export class ExperienciaComponent implements OnInit {
 
   expe:Experiencia[]=[];
   toEditExp:Experiencia;
-  toNewExp:Experiencia = {nombreExp: "", descripcionExp: ""};
+  toNewExp:Experiencia = {nombreExp: "", periodo:"", url_logo:"", descripcionExp: ""};
 
   constructor(private expServ:ExperienciaServService,private modalService:NgbModal, private tokenService: TokenService, private router: Router) { }
 
@@ -36,7 +37,7 @@ export class ExperienciaComponent implements OnInit {
     this.expServ.save(this.toNewExp).subscribe(
       data=>{
         this.cargarExperiencia();
-        this.toNewExp = {nombreExp: "", descripcionExp: ""};
+        this.toNewExp = {nombreExp: "", periodo:"", url_logo:"", descripcionExp: ""};
       },err=>{
         alert('fallo'+ err);
       }
@@ -50,15 +51,25 @@ export class ExperienciaComponent implements OnInit {
       size: 'xl',
     };
     
-    const modal = this.modalService.open(ModalAssignPersonDocumentComponent, options);
+    const modal = this.modalService.open(UploadFileModalComponent, options);
     modal.componentInstance.field1name = "Nombre";
-    modal.componentInstance.field2name = "Descripcion";
+    modal.componentInstance.field2name = "Url_Logo";
+    modal.componentInstance.field3name = "Periodo";
+    modal.componentInstance.field4name = "Descripcion";
     modal.componentInstance.butttonText = "Crear";
     modal.componentInstance.field1 = this.toNewExp.nombreExp;
-    modal.componentInstance.field2 = this.toNewExp.descripcionExp;
+    modal.componentInstance.field2 = this.toNewExp.url_logo;
+    modal.componentInstance.field3 = this.toNewExp.periodo;
+    modal.componentInstance.field4 = this.toNewExp.descripcionExp;
     modal.componentInstance.buttonFunction = this.createExp.bind(this);
     modal.componentInstance.field1Change.subscribe((receivedEntry: any) => {
       this.toNewExp.nombreExp = receivedEntry;
+    });
+    modal.componentInstance.field1Change.subscribe((receivedEntry: any) => {
+      this.toNewExp.url_logo = receivedEntry;
+    });
+    modal.componentInstance.field1Change.subscribe((receivedEntry: any) => {
+      this.toNewExp.periodo = receivedEntry;
     });
     modal.componentInstance.field2Change.subscribe((receivedEntry: any) => {
       this.toNewExp.descripcionExp = receivedEntry;
@@ -86,15 +97,25 @@ export class ExperienciaComponent implements OnInit {
       size: 'xl',
     };
     
-    const modal = this.modalService.open(ModalAssignPersonDocumentComponent, options);
+    const modal = this.modalService.open(UploadFileModalComponent, options);
     modal.componentInstance.field1name = "Nombre";
+    modal.componentInstance.field1name = "Url Logo";
+    modal.componentInstance.field1name = "Periodo";
     modal.componentInstance.field2name = "Descripcion";
     modal.componentInstance.butttonText = "Actualizar";
     modal.componentInstance.field1 = this.toEditExp.nombreExp
+    modal.componentInstance.field1 = this.toEditExp.url_logo
+    modal.componentInstance.field1 = this.toEditExp.periodo
     modal.componentInstance.field2 = this.toEditExp.descripcionExp
     modal.componentInstance.buttonFunction = this.updateE.bind(this);
     modal.componentInstance.field1Change.subscribe((receivedEntry: any) => {
       this.toEditExp.nombreExp = receivedEntry;
+    });
+    modal.componentInstance.field1Change.subscribe((receivedEntry: any) => {
+      this.toEditExp.url_logo = receivedEntry;
+    });
+    modal.componentInstance.field1Change.subscribe((receivedEntry: any) => {
+      this.toEditExp.periodo = receivedEntry;
     });
     modal.componentInstance.field2Change.subscribe((receivedEntry: any) => {
       this.toEditExp.descripcionExp = receivedEntry;

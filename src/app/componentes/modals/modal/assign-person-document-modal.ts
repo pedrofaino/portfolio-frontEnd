@@ -11,13 +11,16 @@ export class ModalAssignPersonDocumentComponent {
   @Input() field1: any;
   @Input() field2: any;
   @Input() field3: any;
+  @Input() field4: any;
   @Input() field1name: any;
   @Input() field2name: any;
   @Input() field3name: any;
+  @Input() field4name: any;
   @Input() butttonText: any;
   @Output() field1Change: EventEmitter<string> = new EventEmitter<string>();
   @Output() field2Change: EventEmitter<string> = new EventEmitter<string>();
   @Output() field3Change: EventEmitter<string> = new EventEmitter<string>();
+  @Output() field4Change: EventEmitter<string> = new EventEmitter<string>();
 
   data: any = {};
 
@@ -29,6 +32,7 @@ export class ModalAssignPersonDocumentComponent {
     this.field1Change.emit(this.field1);
     this.field2Change.emit(this.field2);
     this.field3Change.emit(this.field3);
+    this.field3Change.emit(this.field4);
     this.buttonFunction();
     this.activeModal.close();
   }

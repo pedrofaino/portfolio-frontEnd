@@ -9,6 +9,10 @@
                 <label for="nombreExp">{{field3name}}</label>
                 <input type="text" class="form-control" id="nombreExp" name="field1" [(ngModel)]="field3" required>
             </div>
+            <div class="form-group" *ngIf="field4 != null && field4name">
+                <label for="nombreExp">{{field4name}}</label>
+                <input type="text" class="form-control" id="nombreExp" name="field1" [(ngModel)]="field4" required>
+            </div>
             <div class="form-group">
                 <label for="descripcionExp">{{field2name}}</label>
                 <input #file type="file" id="file" (change)="handleFileInput($event);" />       

@@ -5,7 +5,6 @@ import { environment } from 'src/environments/environment';
 import { JwtDto } from '../model/jwt-dto';
 import { LoginUsuario } from '../model/login-usuario';
 import { NuevoUsuario } from '../model/nuevo-usuario';
-import { Configuration, ConfigurationLoader } from './configuration.service';
 
 @Injectable({
   providedIn: 'root'
