@@ -65,13 +65,13 @@ export class ExperienciaComponent implements OnInit {
     modal.componentInstance.field1Change.subscribe((receivedEntry: any) => {
       this.toNewExp.nombreExp = receivedEntry;
     });
-    modal.componentInstance.field1Change.subscribe((receivedEntry: any) => {
+    modal.componentInstance.field2Change.subscribe((receivedEntry: any) => {
       this.toNewExp.url_logo = receivedEntry;
     });
-    modal.componentInstance.field1Change.subscribe((receivedEntry: any) => {
+    modal.componentInstance.field3Change.subscribe((receivedEntry: any) => {
       this.toNewExp.periodo = receivedEntry;
     });
-    modal.componentInstance.field2Change.subscribe((receivedEntry: any) => {
+    modal.componentInstance.field4Change.subscribe((receivedEntry: any) => {
       this.toNewExp.descripcionExp = receivedEntry;
     });
     return modal;
@@ -99,25 +99,25 @@ export class ExperienciaComponent implements OnInit {
     
     const modal = this.modalService.open(UploadFileModalComponent, options);
     modal.componentInstance.field1name = "Nombre";
-    modal.componentInstance.field1name = "Url Logo";
-    modal.componentInstance.field1name = "Periodo";
-    modal.componentInstance.field2name = "Descripcion";
+    modal.componentInstance.field2name = "Url Logo";
+    modal.componentInstance.field3name = "Periodo";
+    modal.componentInstance.field4name = "Descripcion";
     modal.componentInstance.butttonText = "Actualizar";
     modal.componentInstance.field1 = this.toEditExp.nombreExp
-    modal.componentInstance.field1 = this.toEditExp.url_logo
-    modal.componentInstance.field1 = this.toEditExp.periodo
-    modal.componentInstance.field2 = this.toEditExp.descripcionExp
+    modal.componentInstance.field2 = this.toEditExp.url_logo
+    modal.componentInstance.field3 = this.toEditExp.periodo
+    modal.componentInstance.field4 = this.toEditExp.descripcionExp
     modal.componentInstance.buttonFunction = this.updateE.bind(this);
     modal.componentInstance.field1Change.subscribe((receivedEntry: any) => {
       this.toEditExp.nombreExp = receivedEntry;
     });
-    modal.componentInstance.field1Change.subscribe((receivedEntry: any) => {
+    modal.componentInstance.field2Change.subscribe((receivedEntry: any) => {
       this.toEditExp.url_logo = receivedEntry;
     });
-    modal.componentInstance.field1Change.subscribe((receivedEntry: any) => {
+    modal.componentInstance.field3Change.subscribe((receivedEntry: any) => {
       this.toEditExp.periodo = receivedEntry;
     });
-    modal.componentInstance.field2Change.subscribe((receivedEntry: any) => {
+    modal.componentInstance.field4Change.subscribe((receivedEntry: any) => {
       this.toEditExp.descripcionExp = receivedEntry;
     });
     return modal;

@@ -68,13 +68,13 @@ export class ProyectosComponent implements OnInit {
     modal.componentInstance.field1Change.subscribe((receivedEntry: any) => {
       this.toNewPro.nombreP = receivedEntry;
     });
-    modal.componentInstance.field1Change.subscribe((receivedEntry: any) => {
+    modal.componentInstance.field2Change.subscribe((receivedEntry: any) => {
       this.toNewPro.fecha = receivedEntry;
     });
-    modal.componentInstance.field1Change.subscribe((receivedEntry: any) => {
+    modal.componentInstance.field3Change.subscribe((receivedEntry: any) => {
       this.toNewPro.link = receivedEntry;
     });
-    modal.componentInstance.field2Change.subscribe((receivedEntry: any) => {
+    modal.componentInstance.field4Change.subscribe((receivedEntry: any) => {
       this.toNewPro.descripcionP = receivedEntry;
     });
     return modal;
@@ -114,13 +114,13 @@ export class ProyectosComponent implements OnInit {
     modal.componentInstance.field1Change.subscribe((receivedEntry: any) => {
       this.toEditPro.nombreP = receivedEntry;
     });
-    modal.componentInstance.field1Change.subscribe((receivedEntry: any) => {
+    modal.componentInstance.field2Change.subscribe((receivedEntry: any) => {
       this.toEditPro.fecha = receivedEntry;
     });
-    modal.componentInstance.field1Change.subscribe((receivedEntry: any) => {
+    modal.componentInstance.field3Change.subscribe((receivedEntry: any) => {
       this.toEditPro.link = receivedEntry;
     });
-    modal.componentInstance.field2Change.subscribe((receivedEntry: any) => {
+    modal.componentInstance.field4Change.subscribe((receivedEntry: any) => {
       this.toEditPro.descripcionP = receivedEntry;
     });
     return modal;

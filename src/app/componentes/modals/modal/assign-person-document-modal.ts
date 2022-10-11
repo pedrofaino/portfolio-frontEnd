@@ -32,7 +32,7 @@ export class ModalAssignPersonDocumentComponent {
     this.field1Change.emit(this.field1);
     this.field2Change.emit(this.field2);
     this.field3Change.emit(this.field3);
-    this.field3Change.emit(this.field4);
+    this.field4Change.emit(this.field4);
     this.buttonFunction();
     this.activeModal.close();
   }

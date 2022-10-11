@@ -14,10 +14,14 @@
                               <app-button-delete *ngIf="isLogged" (click)="delete(Edu.id)" ><i class="bi bi-archive"></i></app-button-delete>
                         </div>
                   </div>
-                  <div>
-                        <img src="{{Edu.url_foto}}"/>
-                        <p>{{Edu.fecha}}</p>
-                        <p>{{Edu.descripcionEdu}}</p>
+                  <div class="container">
+                        <div class="row">
+                              <img class="col-2 container-sm" src="{{Edu.url_foto}}"/>
+                              <div class="col-10">
+                                    <p>{{Edu.fecha}}</p>
+                                    <p>{{Edu.descripcionEdu}}</p>
+                              </div>
+                        </div>
                   </div>
             </form>
       </div>

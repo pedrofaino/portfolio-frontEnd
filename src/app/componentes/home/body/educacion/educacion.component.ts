@@ -52,7 +52,7 @@ export class EducacionComponent implements OnInit {
     
     const modal = this.modalService.open(UploadFileModalComponent, options);
     modal.componentInstance.field1name = "Nombre";
-    modal.componentInstance.field2name = "Url_Foto";
+    modal.componentInstance.field2name = "Url Foto";
     modal.componentInstance.field3name = "Fecha";
     modal.componentInstance.field4name = "Descripcion";
     modal.componentInstance.butttonText = "Crear";
@@ -97,7 +97,7 @@ export class EducacionComponent implements OnInit {
     
     const modal = this.modalService.open(UploadFileModalComponent, options);
     modal.componentInstance.field1name = "Nombre";
-    modal.componentInstance.field2name = "Url_Foto";
+    modal.componentInstance.field2name = "Url Foto";
     modal.componentInstance.field3name = "Fecha";
     modal.componentInstance.field4name = "Descripcion";
     modal.componentInstance.butttonText = "Actualizar";
